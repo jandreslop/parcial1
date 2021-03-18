@@ -4,11 +4,11 @@ services:
   miservicio_mysql:
     image: mysql:5.7
     restart: always
-      environment:
-        MYSQL_DATABASE: "facturacion"
-        MYSQL_ROOT_PASSWORD: "root"
-        MYSQL_USER: "root"
-        MYSQL_PASSWORD: "root"
+    environment:
+      MYSQL_DATABASE: "facturacion"
+      MYSQL_ROOT_PASSWORD: "root"
+      MYSQL_USER: "root"
+      MYSQL_PASSWORD: "root"
     volumes:
       # Montamos un volumen para MySQL para no perder los datos de bd
       - ./volumenes/mysql:/var/lib/mysql
@@ -16,11 +16,6 @@ services:
       - 9080:3806
    
   miservicio_php:
-    image: php:7-apache
-    restart: always
-    volumes:
-      # Montamos nuestra web desde fuera
-      miservicio_php:
     image: php:7-apache
     restart: always
     volumes:
